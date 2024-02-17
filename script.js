@@ -8,9 +8,7 @@ let students = [
 ]
 
   
-// Function to print students with marks over 50 using map
-
-  function printStudentsByMap() {
+function PrintStudentswithMap() {
     console.log("\nStudents above 50 marks using map()");
     const StudentsAbove50 = students
       .filter(student => student.marks > 50)
@@ -18,52 +16,45 @@ let students = [
     
     console.log(StudentsAbove50);  
 }
-printStudentsByMap();
 
-//Print all students alongwith info.
- function PrintStudentbyForEach(){
+ function PrintStudentsbyForEach(){
     console.log("\nStudents above 50 marks using forEach()");
 
     const StudentsAbove50 = students.filter(student => student.marks > 50); 
 
     StudentsAbove50.forEach(studentDetail => console.log(studentDetail));
 }
-PrintStudentbyForEach();
 
-//Adding new object into array
 
-addData = (rec)=>{
+
+function addData(){
     console.log("\nStudents List After Adding new record");
     const moreStudent = {id:4,name:"susan",age:"20",marks:45};
-    const studentInfo = rec.push(moreStudent);
-    
-    rec.forEach(studentInfo => console.log(studentInfo));
+    students.push(moreStudent);
 
+    console.log(students);    
 }
-addData(students);
 
-//filtering failed students
 
-removeFailedStudent =(obj)=>{
+
+function removeFailedStudent(){
     console.log("\nStudents List After deleting failed record");
-    const condition = obj => obj.marks < 50;
-    const newobj = obj.filter(obj => !condition(obj));
+    
+    const newobj = students.filter(student => !(student.marks < 50));
     console.log(newobj);
    
 }
-removeFailedStudent(students);
 
 
 //concating Arrays
 //other Array of objects
-const array =[
+const arr2 =[
     {id:11, name: 'Alice', age :"20", marks: 45 }, 
     { id:12, name: "Eva", age:"23", marks:65 }, 
     { id:13, name: "Laren", age:"29", marks:85 }
 ]
-ConcatenateArray = (arr1,arr2) =>{
-    const arr = arr1.concat(arr2);
-    
+function concatenateArray(){
+    console.log("\nStudents List After concatenate");
+    const arr = students.concat(arr2);
+    console.log(arr);
 }
-console.log("\nStudents List After concatenate");
-console.log(ConcatenateArray(students,array));
